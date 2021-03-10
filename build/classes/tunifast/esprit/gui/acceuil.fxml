@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDrawer?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@../../../resources/design.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tunifast.esprit.gui.AcceuilController">
+   <children>
+           <JFXDrawer fx:id="drawer" defaultDrawerSize="200.0" resizableOnDrag="true" resizeContent="true" styleClass="jfx-drawer" />
+      <BorderPane fx:id="rootAnchorPane" prefHeight="200.0" prefWidth="200.0">
+         <top>
+            <MenuBar prefWidth="735.0" BorderPane.alignment="CENTER">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Close" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Delete" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </top>
+         <center>
+            <AnchorPane prefHeight="506.0" prefWidth="790.0" BorderPane.alignment="CENTER">
+               <children>
+                  <JFXTabPane fx:id="tabPaneAc" prefHeight="491.0" prefWidth="800.0">
+                     <tabs>
+                        <Tab fx:id="tabPass" text="Dashboard passager">
+                           <graphic>
+                              <AnchorPane prefHeight="27.0" prefWidth="36.0">
+                                 <children>
+                                    <ImageView fx:id="img" fitHeight="27.0" fitWidth="26.0" layoutX="18.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" style="visibility: true;">
+                                       <image>
+                                          <Image url="@icons/detailsicon1.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </AnchorPane>
+                           </graphic>
+                           <content>
+                              <StackPane prefHeight="150.0" prefWidth="767.0" />
+                           </content>
+                           <content>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <GridPane prefHeight="452.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                             <children>
+                                                <Label layoutX="33.0" layoutY="20.0" text="demander compte chauffeur" textFill="#94c270">
+                                                   <font>
+                                                      <Font name="Copperplate Gothic Bold" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <JFXButton layoutX="106.0" layoutY="57.0" onAction="#upgrade" prefHeight="43.0" prefWidth="162.0" text="upgrade" />
+                                                <Label layoutX="59.0" layoutY="113.0" text="les dernières actualités " textFill="#94c270">
+                                                   <font>
+                                                      <Font name="Copperplate Gothic Bold" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <JFXButton layoutX="106.0" layoutY="155.0" onAction="#actualité" prefHeight="43.0" prefWidth="162.0" text="actualité" />
+                                             </children>
+                                          </AnchorPane>
+                                          <PieChart fx:id="pie1" prefHeight="208.0" prefWidth="365.0" GridPane.rowIndex="1" />
+                                       </children>
+                                    </GridPane>
+                                 </children></AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab fx:id="tabPass1" text="Dashboard chauffeur">
+                           <content>
+                              <AnchorPane prefHeight="200.0" prefWidth="520.0" />
+                           </content>
+                           <graphic>
+                              <AnchorPane prefHeight="27.0" prefWidth="36.0">
+                                 <children>
+                                    <ImageView fx:id="img1" fitHeight="27.0" fitWidth="26.0" layoutX="18.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" style="visibility: true;">
+                                       <image>
+                                          <Image url="@icons/detailsicon1.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </AnchorPane>
+                           </graphic>
+                        </Tab>
+                        <Tab fx:id="tabPass11" text="acctualités">
+                           <content>
+                        
+                           </content>
+                           <graphic>
+                              <AnchorPane prefHeight="27.0" prefWidth="36.0">
+                                 <children>
+                                    <ImageView fx:id="img11" fitHeight="27.0" fitWidth="26.0" layoutX="18.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" style="visibility: true;">
+                                       <image>
+                                          <Image url="@../../../resources/news.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </AnchorPane>
+                           </graphic>
+                        </Tab>
+                     </tabs>
+                  </JFXTabPane>
+                      <JFXHamburger fx:id="hamburger" layoutX="749.0" layoutY="14.0" styleClass="jfx-hamburger-icon" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="14.0">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </JFXHamburger>
+               </children>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </AnchorPane>
+         </center>
+         <bottom>
+            <HBox prefHeight="59.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+               <children>
+                  <StackPane prefHeight="74.0" prefWidth="600.0">
+                     <children>
+                        <VBox prefHeight="68.0" prefWidth="300.0">
+                           <children>
+                              <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #CCD1D1;">
+                                 <children>
+                                    <Text fx:id="txt1" strokeType="OUTSIDE" strokeWidth="0.0" text="loading" wrappingWidth="117.873046875">
+                                       <font>
+                                          <Font name="Copperplate Gothic Light" size="12.0" />
+                                       </font></Text>
+                                    <Text fill="#934adc" strokeType="OUTSIDE" strokeWidth="0.0" text="is " wrappingWidth="32.998046875">
+                                       <font>
+                                          <Font name="Copperplate Gothic Light" size="12.0" />
+                                       </font></Text>
+                                    <Text fx:id="txt2" layoutX="197.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="loading">
+                                       <font>
+                                          <Font name="Copperplate Gothic Light" size="12.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #CCD1D1;">
+                                 <children>
+                                    <Text fill="#934adc" strokeType="OUTSIDE" strokeWidth="0.0" text="from:" wrappingWidth="51.294921875">
+                                       <font>
+                                          <Font name="Copperplate Gothic Light" size="12.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fx:id="txt3" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="110.13671875">
+                                       <font>
+                                          <Font name="Copperplate Gothic Light" size="12.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fill="#934adc" strokeType="OUTSIDE" strokeWidth="0.0" text="to:" wrappingWidth="29.09765625">
+                                       <font>
+                                          <Font name="Copperplate Gothic Light" size="12.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fx:id="txt4" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-background-color: #F8F9B1;" text="Text" wrappingWidth="73.03125">
+                                       <font>
+                                          <Font name="Copperplate Gothic Light" size="12.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #CCD1D1;">
+                                 <children>
+                                    <Text fill="#934adc" strokeType="OUTSIDE" strokeWidth="0.0" text="date:" wrappingWidth="50.513671875">
+                                       <font>
+                                          <Font name="Copperplate Gothic Light" size="12.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fx:id="txt5" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="112.13671875">
+                                       <font>
+                                          <Font name="Copperplate Gothic Light" size="12.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fill="#934adc" strokeType="OUTSIDE" strokeWidth="0.0" text="time :" wrappingWidth="47.87109375">
+                                       <font>
+                                          <Font name="Copperplate Gothic Light" size="12.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fx:id="txt6" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+                                       <font>
+                                          <Font name="Copperplate Gothic Light" size="12.0" />
+                                       </font>
+                                    </Text>
+                                 </children></HBox>
+                           </children>
+                        </VBox>
+                     </children></StackPane>
+                  <StackPane prefHeight="75.0" prefWidth="105.0">
+                     <children>
+                        <ImageView fitHeight="242.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../resources/logo0.PNG" />
+                           </image>
+                           <StackPane.margin>
+                              <Insets />
+                           </StackPane.margin>
+                        </ImageView>
+                     </children>
+                  </StackPane>
+                  <StackPane layoutX="10.0" layoutY="10.0" prefHeight="74.0" prefWidth="600.0">
+                     <children>
+                        <VBox prefHeight="68.0" prefWidth="300.0">
+                           <children>
+                              <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #CCD1D1;">
+                                 <children>
+                                    <Text fx:id="txt11" strokeType="OUTSIDE" strokeWidth="0.0" text="loading" wrappingWidth="117.873046875">
+                                       <font>
+                                          <Font name="Copperplate Gothic Light" size="12.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fill="#934adc" strokeType="OUTSIDE" strokeWidth="0.0" text="is " wrappingWidth="32.998046875">
+                                       <font>
+                                          <Font name="Copperplate Gothic Light" size="12.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fx:id="txt22" layoutX="197.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="loading">
+                                       <font>
+                                          <Font name="Copperplate Gothic Light" size="12.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #CCD1D1;">
+                                 <children>
+                                    <Text fill="#934adc" strokeType="OUTSIDE" strokeWidth="0.0" text="from:" wrappingWidth="51.294921875">
+                                       <font>
+                                          <Font name="Copperplate Gothic Light" size="12.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fx:id="txt33" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="110.13671875">
+                                       <font>
+                                          <Font name="Copperplate Gothic Light" size="12.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fill="#934adc" strokeType="OUTSIDE" strokeWidth="0.0" text="to:" wrappingWidth="29.09765625">
+                                       <font>
+                                          <Font name="Copperplate Gothic Light" size="12.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fx:id="txt44" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-background-color: #F8F9B1;" text="Text" wrappingWidth="73.03125">
+                                       <font>
+                                          <Font name="Copperplate Gothic Light" size="12.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #CCD1D1;">
+                                 <children>
+                                    <Text fill="#934adc" strokeType="OUTSIDE" strokeWidth="0.0" text="date:" wrappingWidth="50.513671875">
+                                       <font>
+                                          <Font name="Copperplate Gothic Light" size="12.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fx:id="txt55" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="112.13671875">
+                                       <font>
+                                          <Font name="Copperplate Gothic Light" size="12.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fill="#934adc" strokeType="OUTSIDE" strokeWidth="0.0" text="time :" wrappingWidth="47.87109375">
+                                       <font>
+                                          <Font name="Copperplate Gothic Light" size="12.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fx:id="txt66" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+                                       <font>
+                                          <Font name="Copperplate Gothic Light" size="12.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children></StackPane>
+               </children>
+            </HBox>
+         </bottom>
+     
+      </BorderPane>
+   </children>
+</StackPane>
